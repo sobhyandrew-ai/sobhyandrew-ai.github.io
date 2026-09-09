@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Event Galleries — Andrew Hanna Photography</title>
+<meta name="description" content="Download photos from events covered by Andrew Hanna Photography.">
+<link rel="icon" href="favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--ink:#111;--cream:#F4EFE6;--dim:#7C776F;--muted:#BDB7AD;--line:#2a2a2a}
+*{box-sizing:border-box}
+img{max-width:100%;height:auto}
+body{margin:0;background:var(--ink);color:var(--cream);font-family:Poppins,system-ui,sans-serif;-webkit-font-smoothing:antialiased}
+a{color:inherit;text-decoration:none}
+.spec{background:linear-gradient(90deg,#FF6A6A,#FFB05A,#FFEB6E,#6FDD8E,#5EA8FF,#A88CFF)}
+.wrap{max-width:1280px;margin:0 auto;padding:0 clamp(20px,4vw,56px)}
+nav{position:sticky;top:0;z-index:50;background:rgba(17,17,17,.85);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+nav .wrap{display:flex;align-items:center;justify-content:space-between;height:72px}
+nav img{height:42px}
+nav ul{display:flex;gap:26px;list-style:none;margin:0;padding:0;font-size:13px;letter-spacing:.18em;text-transform:uppercase;color:var(--muted)}
+nav ul a:hover{color:var(--cream)}
+.btn{display:inline-flex;align-items:center;gap:9px;padding:14px 22px;border-radius:999px;background:var(--cream);color:var(--ink);font-weight:600;font-size:14px;border:0;cursor:pointer;font-family:inherit}
+.btn:hover{background:#fff}
+.btn.ghost{background:transparent;color:var(--cream);border:1px solid #3a3a3a}
+.btn.ghost:hover{border-color:var(--cream)}
+.eyebrow{font-size:12px;letter-spacing:.3em;text-transform:uppercase;color:var(--dim)}
+h1{font-size:clamp(40px,7vw,88px);line-height:.95;letter-spacing:-.035em;margin:16px 0 18px;font-weight:700;text-wrap:balance}
+.bar{height:6px;width:120px;border-radius:3px}
+main{padding:64px 0 20px}
+.meta{color:var(--muted);font-size:17px;margin:20px 0 0}
+.cta{display:flex;gap:11px;flex-wrap:wrap;margin-top:28px}
+.count{color:var(--dim);font-size:13px;letter-spacing:.2em;text-transform:uppercase;margin-top:34px}
+.grid{columns:3 280px;column-gap:14px;margin-top:16px}
+.grid figure{margin:0 0 14px;break-inside:avoid;position:relative;overflow:hidden;border-radius:10px;background:#1a1a1a;cursor:zoom-in}
+.grid img{width:100%;height:auto;display:block;transition:transform .5s ease}
+.grid figure:hover img{transform:scale(1.03)}
+.dl{position:absolute;right:10px;bottom:10px;background:rgba(17,17,17,.78);color:#fff;border-radius:999px;padding:8px 13px;font-size:12px;letter-spacing:.06em;opacity:0;transition:.25s;backdrop-filter:blur(6px)}
+.grid figure:hover .dl{opacity:1}
+.soon{border:1px solid #3a3a3a;border-radius:14px;padding:30px 30px;max-width:560px;color:var(--muted);line-height:1.65;margin-top:36px}
+.soon strong{color:var(--cream);display:block;margin-bottom:8px;font-size:19px}
+.miss{margin-top:70px;padding-top:32px;border-top:1px solid var(--line);color:var(--muted);font-size:15px;line-height:1.7;max-width:640px}
+.miss a{text-decoration:underline}
+footer{padding:34px 0;border-top:1px solid var(--line);color:var(--dim);font-size:12px;letter-spacing:.14em;text-transform:uppercase;display:flex;flex-wrap:wrap;gap:16px;justify-content:space-between;margin-top:70px}
+.lb{position:fixed;inset:0;background:rgba(0,0,0,.95);display:none;align-items:center;justify-content:center;z-index:100}
+.lb.open{display:flex}
+.lb img{max-width:94vw;max-height:84vh;border-radius:6px}
+.lb button{position:absolute;background:none;border:0;color:#fff;font-size:34px;cursor:pointer;padding:18px;opacity:.75}
+.lb button:hover{opacity:1}
+.lb .x{top:8px;right:12px}.lb .p{left:4px;top:50%;transform:translateY(-50%)}.lb .n{right:4px;top:50%;transform:translateY(-50%)}
+.lb .barbottom{position:absolute;bottom:16px;left:0;right:0;display:flex;gap:12px;justify-content:center;align-items:center}
+.lb .cnt{color:var(--muted);font-size:12px;letter-spacing:.2em}
+@media(max-width:700px){nav ul{display:none}}
+
+.cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:22px;margin-top:44px}
+.card{background:#161616;border:1px solid var(--line);border-radius:14px;overflow:hidden;display:flex;flex-direction:column}
+.card .ph{aspect-ratio:3/2;background:#1e1e1e center/cover;display:block}
+.card .body{padding:22px;display:flex;flex-direction:column;gap:7px}
+.card h2{font-size:25px;margin:0;letter-spacing:-.02em;line-height:1.15}
+.card .m{color:var(--muted);font-size:14px}
+.pill{display:inline-block;font-size:11px;letter-spacing:.18em;text-transform:uppercase;padding:5px 11px;border-radius:999px;border:1px solid #3a3a3a;color:var(--muted);width:max-content}
+.pill.on{border-color:transparent;color:#111;font-weight:600}
+</style>
+</head>
+<body>
+<nav><div class="wrap">
+  <a href="index.html"><img src="logo_white.png" alt="Andrew Hanna Photography"></a>
+  <ul><li><a href="index.html#work">Work</a></li><li><a href="events.html">Events</a></li><li><a href="index.html#services">Services</a></li><li><a href="index.html#contact">Contact</a></li></ul>
+  <a class="btn" href="https://wa.me/971508246994?text=Hi%20Andrew%2C%20I%27d%20like%20to%20book%20a%20shoot" target="_blank" rel="noopener">Book a shoot</a>
+</div></nav>
+<main class="wrap">
+  <div class="eyebrow">Event galleries</div>
+  <h1>Were you there?</h1>
+  <div class="bar spec"></div>
+  <p class="meta" style="max-width:600px;line-height:1.65">Photos from events I've covered. Open your event and download anything you like — free, full resolution.</p>
+  <div id="cards" class="cards"></div>
+</main>
+<div class="wrap"><footer><span>© Andrew Hanna Photography</span><span>Automotive · Events · Interiors</span><span><a href="https://www.instagram.com/andrew_hanna_photography/" target="_blank" rel="noopener">@andrew_hanna_photography</a></span></footer></div>
+<script src="events.js"></script>
+<script>
+var EV = window.AH_EVENTS || [];
+function pretty(d){ if(!d) return ''; var t=new Date(d+'T00:00:00'); return isNaN(t)?d:t.toLocaleDateString('en-GB',{month:'long',year:'numeric'}); }
+var box=document.getElementById('cards');
+EV.forEach(function(e){
+  var live = e.photos && e.photos.length;
+  var c=document.createElement('article'); c.className='card';
+  c.innerHTML = '<span class="ph"'+(live?' style="background-image:url(\''+e.photos[0]+'\')"':'')+'></span>'+
+    '<div class="body"><span class="pill'+(live?' on spec':'')+'">'+(live?e.photos.length+' photos':'Coming soon')+'</span>'+
+    '<h2>'+e.name+'</h2><div class="m">'+[pretty(e.date), e.venue].filter(Boolean).join(' · ')+'</div>'+
+    '<div style="margin-top:14px"><a class="btn" href="event.html?e='+encodeURIComponent(e.slug)+'">'+(live?'Open gallery':'Details')+'</a></div></div>';
+  box.appendChild(c);
+});
+</script>
+</body>
+</html>
