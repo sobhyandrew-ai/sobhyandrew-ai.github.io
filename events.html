@@ -85,7 +85,8 @@ var box=document.getElementById('cards');
 EV.forEach(function(e){
   var live = e.photos && e.photos.length;
   var c=document.createElement('article'); c.className='card';
-  c.innerHTML = '<span class="ph"'+(live?' style="background-image:url(\''+e.photos[0]+'\')"':'')+'></span>'+
+  var cover = e.cover || (live ? e.photos[0] : '');
+  c.innerHTML = '<span class="ph"'+(cover?' style="background-image:url(\''+cover+'\')"':'')+'></span>'+
     '<div class="body"><span class="pill'+(live?' on spec':'')+'">'+(live?e.photos.length+' photos':'Coming soon')+'</span>'+
     '<h2>'+e.name+'</h2><div class="m">'+[pretty(e.date), e.venue].filter(Boolean).join(' · ')+'</div>'+
     '<div style="margin-top:14px"><a class="btn" href="event.html?e='+encodeURIComponent(e.slug)+'">'+(live?'Open gallery':'Details')+'</a></div></div>';

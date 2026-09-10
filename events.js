@@ -5,6 +5,8 @@
    name    : shown on the page
    date    : "2026-09-20"
    venue   : where it was
+   cover   : the card image, e.g. "dme26_cover.jpg"
+             (leave "" and the first photo is used)
    photos  : filenames in the repo, e.g. "dme26_01.jpg"
              (leave [] until the photos are uploaded)
    zip     : optional "download all" file, e.g. "dme26.zip"
@@ -15,6 +17,7 @@ window.AH_EVENTS = [
     name:   "Dubai Media Events",
     date:   "2026-09-01",
     venue:  "Dubai",
+    cover:  "",
     photos: [],
     zip:    ""
   }
