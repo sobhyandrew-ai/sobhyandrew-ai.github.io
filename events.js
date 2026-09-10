@@ -14,7 +14,7 @@
 window.AH_EVENTS = [
   {
     slug:   "dubai-media-events-sep-2026",
-    name:   "Dubai Media Events",
+    name:   "Dubai Eventmania 2026",
     date:   "2026-09-01",
     venue:  "Dubai",
     cover:  "dme26_cover.jpg",
