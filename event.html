@@ -80,6 +80,8 @@ var slug=new URLSearchParams(location.search).get('e');
 var e=EV.filter(function(x){return x.slug===slug;})[0];
 var head=document.getElementById('head'), gal=document.getElementById('gallery');
 function pretty(d){ if(!d) return ''; var t=new Date(d+'T00:00:00'); return isNaN(t)?d:t.toLocaleDateString('en-GB',{day:'numeric',month:'long',year:'numeric'}); }
+function thumb(s){ return s.replace(/\.(jpe?g|png|webp)$/i,'_t.$1'); }
+function grab(src){ var a=document.createElement('a'); a.href=src; a.download=src.split('/').pop(); document.body.appendChild(a); a.click(); a.remove(); }
 if(!e){
   head.innerHTML='<div class="eyebrow">Event galleries</div><h1>Gallery not found.</h1><div class="bar spec"></div>'+
    '<p class="meta">That link doesn\'t match a gallery.</p><div class="cta"><a class="btn" href="events.html">All events</a></div>';
@@ -91,15 +93,15 @@ if(!e){
     (live
       ? '<div class="cta">'+(e.zip?'<a class="btn" href="'+e.zip+'" download>Download all photos</a>':'')+
         '<a class="btn ghost" href="events.html">All events</a></div>'+
-        '<p class="count">'+photos.length+' photos · free to download, full resolution</p>'
+        '<p class="count">'+photos.length+' photos · free to download</p>'
       : '<div class="soon"><strong>The photos are being edited.</strong>They usually go up within 48–72 hours of the event. Keep this link — the gallery appears right here.</div>'+
         '<div class="cta"><a class="btn ghost" href="https://www.instagram.com/andrew_hanna_photography/" target="_blank" rel="noopener">Follow for the drop</a></div>');
   if(live){
     var g=document.createElement('div'); g.className='grid'; g.id='grid';
     photos.forEach(function(src,i){
       var f=document.createElement('figure');
-      f.innerHTML='<img loading="lazy" src="'+src+'" alt="'+e.name+' — photo '+(i+1)+' by Andrew Hanna"><span class="dl">Download</span>';
-      f.addEventListener('click',function(ev){ if(ev.target.className==='dl'){ var a=document.createElement('a'); a.href=src; a.download=''; a.click(); ev.stopPropagation(); } else open_(i); });
+      f.innerHTML='<img loading="lazy" src="'+thumb(src)+'" alt="'+e.name+' — photo '+(i+1)+' by Andrew Hanna"><span class="dl">Download</span>';
+      f.addEventListener('click',function(ev){ if(ev.target.className==='dl'){ ev.stopPropagation(); grab(src); } else open_(i); });
       g.appendChild(f);
     });
     gal.appendChild(g);
